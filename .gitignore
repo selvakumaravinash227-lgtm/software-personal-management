@@ -1,0 +1,20 @@
+target/
+**/target/
+.vercel/
+.env
+.idea/
+*.iml
+
+node_modules/
+frontend/web/dist/
+frontend/web/.env.local
+
+frontend/web/.env.*
+!frontend/web/.env.example
+preservation/secure-employee-provisioning/*.csv
+spms-one-time-credentials*.csv
+employee-temporary-credentials*.csv
+
+# Local recovery backups can contain database dumps and old secrets.
+# Keep them on this computer; they are not needed for the Vercel frontend.
+preservation/

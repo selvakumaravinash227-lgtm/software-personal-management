@@ -1,0 +1,3 @@
+package spms.model;
+import org.junit.jupiter.api.Test;import java.math.BigDecimal;import static org.junit.jupiter.api.Assertions.*;
+class SalaryCalculatorTest {@Test void calculatesNetSalary(){assertEquals(new BigDecimal("975.00"),SalaryCalculator.net(new BigDecimal("1000.00"),new BigDecimal("125.00"),new BigDecimal("150.00")));}@Test void rejectsNegativeComponents(){assertThrows(IllegalArgumentException.class,()->SalaryCalculator.net(new BigDecimal("100"),BigDecimal.ZERO,new BigDecimal("-1")));}@Test void rejectsDeductionsAboveGrossPay(){assertThrows(IllegalArgumentException.class,()->SalaryCalculator.net(new BigDecimal("100"),new BigDecimal("5"),new BigDecimal("106")));}}

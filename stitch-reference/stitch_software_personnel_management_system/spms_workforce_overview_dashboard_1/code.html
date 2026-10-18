@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "workspace-bg": "#F8FAFC",
+          "on-tertiary-fixed": "#00174b",
+          "on-secondary": "#ffffff",
+          "surface-tint": "#006591",
+          "surface": "#f8f9ff",
+          "primary-container": "#0ea5e9",
+          "inverse-on-surface": "#eaf1ff",
+          "on-primary-container": "#003751",
+          "outline": "#6e7881",
+          "on-surface-variant": "#3e4850",
+          "on-error": "#ffffff",
+          "status-danger": "#EF4444",
+          "surface-container": "#e5eeff",
+          "nav-bg": "#0F172A",
+          "background": "#f8f9ff",
+          "surface-bright": "#f8f9ff",
+          "primary": "#006591",
+          "error": "#ba1a1a",
+          "inverse-surface": "#213145",
+          "on-secondary-fixed": "#00201d",
+          "status-warning": "#F59E0B",
+          "primary-fixed": "#c9e6ff",
+          "tertiary": "#0053db",
+          "secondary-fixed": "#89f5e7",
+          "on-surface": "#0b1c30",
+          "on-tertiary-fixed-variant": "#003ea8",
+          "on-error-container": "#93000a",
+          "secondary": "#006a61",
+          "card-bg": "#FFFFFF",
+          "border-subtle": "#E2E8F0",
+          "tertiary-container": "#7397ff",
+          "error-container": "#ffdad6",
+          "on-secondary-container": "#006f66",
+          "on-tertiary-container": "#002c7e",
+          "surface-variant": "#d3e4fe",
+          "surface-container-highest": "#d3e4fe",
+          "surface-dim": "#cbdbf5",
+          "secondary-container": "#86f2e4",
+          "nav-surface": "#1E293B",
+          "on-primary-fixed-variant": "#004c6e",
+          "on-primary-fixed": "#001e2f",
+          "surface-container-high": "#dce9ff",
+          "outline-variant": "#bec8d2",
+          "tertiary-fixed-dim": "#b4c5ff",
+          "inverse-primary": "#89ceff",
+          "secondary-fixed-dim": "#6bd8cb",
+          "status-success": "#10B981",
+          "on-background": "#0b1c30",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-secondary-fixed-variant": "#005049",
+          "tertiary-fixed": "#dbe1ff",
+          "primary-fixed-dim": "#89ceff",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#eff4ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "space-md": "1rem",
+          "margin-mobile": "1rem",
+          "gutter": "1.5rem",
+          "margin": "2rem",
+          "gutter-mobile": "1rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem"
+        },
+        "fontFamily": {
+          "headline-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "data-metric": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "data-metric": [
+            "30px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-workspace-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-nav-bg text-on-primary z-50 flex flex-col justify-between border-r border-nav-surface shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm border-b border-nav-surface"><img alt="SPMS Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQYi9CZ483Bruy5kHDsHdScwp-IdC7F4u_16LkblzyWarDOl1w8MBsrq-jbyWiJ5tKl2idumnQL_jNAmllbYaH1zsfpVy9iF3wlft5a2_wrj3sI_5bSivKvmb3qqoO3m4EfBRUUHDtkiCBAIUh9QGHsoX8EOqNMxcDap4aVr47baCuDecLmq01cKabua7strUWp2kmPcWrWTjcCfelnyjgy-TOb0o3evnp0T9E7OKJfk43i36jNMABnA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-card-bg leading-none">SPMS</span><span class="font-label-sm text-label-sm text-secondary-fixed opacity-90 leading-tight mt-0.5">Workforce Intelligence</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline-variant font-semibold">Platform Navigation</div></div><nav class="flex-1 px-space-md space-y-1" data-active-classes="bg-secondary-container text-on-secondary-container font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg transition-colors bg-secondary-container text-on-secondary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-inverse-on-surface hover:bg-nav-surface hover:text-secondary-fixed transition-colors" data-path="user-authentication" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-lg text-label-lg">User Authentication</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-inverse-on-surface hover:bg-nav-surface hover:text-secondary-fixed transition-colors" data-path="employee-management" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span class="font-label-lg text-label-lg">Employee Management</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-inverse-on-surface hover:bg-nav-surface hover:text-secondary-fixed transition-colors" data-path="attendance-and-leave-management" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-label-lg text-label-lg">Attendance &amp; Leave</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-inverse-on-surface hover:bg-nav-surface hover:text-secondary-fixed transition-colors" data-path="payroll-management" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-lg text-label-lg">Payroll Management</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-inverse-on-surface hover:bg-nav-surface hover:text-secondary-fixed transition-colors" data-path="performance-and-reports" href="#"><span class="material-symbols-outlined text-[20px]">insights</span><span class="font-label-lg text-label-lg">Performance &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-inverse-on-surface hover:bg-nav-surface hover:text-secondary-fixed transition-colors" data-path="administration" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-lg text-label-lg">Administration</span></a></nav></div><div class="p-space-md border-t border-nav-surface"><div class="bg-nav-surface/70 rounded-lg p-space-sm mb-space-sm flex items-center justify-between"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-success opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-status-success"></span></span><span class="font-label-sm text-label-sm text-inverse-on-surface">System Operational</span></div><span class="font-label-sm text-label-sm text-secondary-fixed font-mono">v2.4</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-status-danger hover:bg-error-container/20 hover:text-error transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">power_settings_new</span><span class="font-label-lg text-label-lg font-medium">Logout</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-card-bg border-b border-border-subtle z-40 flex items-center justify-between px-space-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 font-label-md text-label-md text-outline"><span class="hover:text-on-surface transition-colors cursor-pointer">SPMS Core</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-primary font-semibold">Workspace</span></div></div><div class="flex items-center gap-space-lg"><div class="relative w-80"><span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span><input class="w-full h-10 pl-9 pr-3 rounded-lg border border-border-subtle bg-workspace-bg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search employees, reports, ID..." type="text"/></div><div class="flex items-center gap-2"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-workspace-bg hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-status-danger font-label-sm text-label-sm text-on-error font-bold">3</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-workspace-bg hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button></div><div class="h-8 w-px bg-border-subtle"></div><div class="flex items-center gap-3 cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC_wy27pBBdziLg2prKOAy5yv4UJUcFXTXAHKfByVc71ZYS5RLwakG3bsDybKmgv9aDKWnrp3S016sZvTkWFDsfrxoKLBYakZSTWHETpBjvr-3uREiTKStq3QImBx6mfZLngALKmoe9jvbBKUjJuThGok8gG005qeozkUFFl6dVtUTYuW9-dcAln1kH4ZiXMPjgbxLE2x17MmBhbRevNfyvP4vAyT19GPlR1W7-LLRNGI41zQDETTT6Q"/><div class="flex flex-col text-left"><span class="font-label-lg text-label-lg text-on-surface leading-tight font-semibold group-hover:text-primary transition-colors">Sarah Jenkins</span><span class="font-label-sm text-label-sm text-outline leading-tight">Admin / HR Director</span></div><span class="material-symbols-outlined text-outline group-hover:text-on-surface text-[18px] transition-colors">expand_more</span></div></div></header><main class="relative pt-16 bg-workspace-bg min-h-screen w-full px-space-xl"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Bar / Executive Welcome & Header Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-md mb-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Workforce Overview</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Live Telemetry
+        </span>
+</div>
+<p class="font-body-md text-body-md text-outline">
+        Good morning, Sarah • <span class="text-on-surface font-medium">Monday, October 28, 2024</span> • Monitor employee activity and personnel operations.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm font-label-lg text-label-lg" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+        Export Summary
+      </button>
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all shadow-sm font-label-lg text-label-lg" onclick="openProvisionModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+        + Add Employee
+      </button>
+</div>
+</div>
+<!-- Primary Metric KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+<!-- Card 1: Total Employees -->
+<div class="bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Total Headcount</span>
+<span class="font-data-metric text-data-metric text-on-surface mt-1">1,248</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">group</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-4 pt-3 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="inline-flex items-center text-status-success font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>+12
+        </span>
+<span class="font-body-sm text-body-sm text-outline">net addition this month</span>
+</div>
+</div>
+<!-- Card 2: Present Today -->
+<div class="bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Present Today</span>
+<span class="font-data-metric text-data-metric text-on-surface mt-1">1,182</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-4 pt-3 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="px-2 py-0.5 rounded-full bg-status-success/10 text-status-success font-label-sm text-label-sm font-semibold">
+          94.7%
+        </span>
+<span class="font-body-sm text-body-sm text-outline">punctuality index</span>
+</div>
+</div>
+<!-- Card 3: Employees on Leave -->
+<div class="bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">On Active Leave</span>
+<span class="font-data-metric text-data-metric text-on-surface mt-1">42</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">event_busy</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4 pt-3 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface"><span class="font-semibold text-on-surface">34</span> Planned</span>
+<span class="text-outline">•</span>
+<span class="font-body-sm text-body-sm text-on-surface"><span class="font-semibold text-status-warning">8</span> Medical/Sick</span>
+</div>
+</div>
+<!-- Card 4: Pending Leave Requests -->
+<div class="bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Pending Approvals</span>
+<span class="font-data-metric text-data-metric text-on-surface mt-1">16</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-4 pt-3 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="px-2 py-0.5 rounded-full bg-status-danger/10 text-status-danger font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">priority_high</span> 4 Urgent
+        </span>
+<span class="font-body-sm text-body-sm text-outline">action needed today</span>
+</div>
+</div>
+</div>
+<!-- Attendance & Workforce Analytics (2-Column Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-xl">
+<!-- Left Column: Attendance Telemetry & Dept Breakdowns -->
+<div class="lg:col-span-7 bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Daily Attendance Overview</h2>
+<p class="font-body-sm text-body-sm text-outline">Shift roster telemetry as of 10:45 AM</p>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">
+            Realtime Sync
+          </span>
+</div>
+<!-- Composite Meter Bar -->
+<div class="mb-space-lg">
+<div class="flex justify-between items-center mb-2 font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">1,248 Total Headcount Logged</span>
+<span class="text-outline">Target: 95.0%</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden flex gap-0.5">
+<div class="h-full bg-status-success rounded-l-full" style="width: 94.7%;" title="Present: 94.7%"></div>
+<div class="h-full bg-status-warning" style="width: 3.4%;" title="On Leave: 3.4%"></div>
+<div class="h-full bg-status-danger rounded-r-full" style="width: 1.9%;" title="Absent: 1.9%"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-3 pt-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-success"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Present</span>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">1,182 <span class="font-body-sm text-body-sm text-outline font-normal">(94.7%)</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-warning"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">On Leave</span>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">42 <span class="font-body-sm text-body-sm text-outline font-normal">(3.4%)</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-danger"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Unplanned Absent</span>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">24 <span class="font-body-sm text-body-sm text-outline font-normal">(1.9%)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Department Breakdown Meter List -->
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold mb-3">Attendance by Key Department</h3>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Engineering &amp; Architecture (640 Staff)</span>
+<span class="font-semibold text-status-success">98.0%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 98%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Product &amp; UX Research (185 Staff)</span>
+<span class="font-semibold text-status-success">96.0%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 96%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Operations &amp; Infrastructure (220 Staff)</span>
+<span class="font-semibold text-on-surface">95.0%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 95%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Sales &amp; Enterprise Growth (203 Staff)</span>
+<span class="font-semibold text-status-warning">92.0%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-status-warning" style="width: 92%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Workforce Analytics (Trend + Dept Distribution Donut) -->
+<div class="lg:col-span-5 bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Workforce Analytics</h2>
+<p class="font-body-sm text-body-sm text-outline">7-Day trend &amp; talent distribution</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">query_stats</span>
+</div>
+<!-- 7-Day Trend Chart Inline SVG -->
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-outline uppercase font-semibold">Weekly Attendance Trend</span>
+<span class="font-label-sm text-label-sm font-semibold text-status-success">+1.8% vs last week</span>
+</div>
+<div class="h-24 w-full">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 300 90">
+<!-- Grid lines -->
+<line class="text-surface-variant opacity-50" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="300" y1="20" y2="20"></line>
+<line class="text-surface-variant opacity-50" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="300" y1="50" y2="50"></line>
+<line class="text-surface-variant opacity-50" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="300" y1="80" y2="80"></line>
+<!-- Smooth Trend Fill Area -->
+<path class="text-secondary-fixed/40" d="M 0 60 Q 50 45, 100 50 T 200 30 T 300 20 L 300 90 L 0 90 Z" fill="currentColor"></path>
+<!-- Stroke Line -->
+<path class="text-secondary" d="M 0 60 Q 50 45, 100 50 T 200 30 T 300 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Dots on nodes -->
+<circle class="fill-card-bg stroke-secondary" cx="0" cy="60" r="3" stroke-width="2"></circle>
+<circle class="fill-card-bg stroke-secondary" cx="100" cy="50" r="3" stroke-width="2"></circle>
+<circle class="fill-card-bg stroke-secondary" cx="200" cy="30" r="3" stroke-width="2"></circle>
+<circle class="fill-card-bg stroke-secondary" cx="300" cy="20" r="3" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline mt-1 px-1">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Today</span>
+</div>
+</div>
+<!-- Department Donut & Allocations -->
+<div class="flex items-center gap-space-md pt-2">
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<!-- Inline Mini Donut SVG -->
+<svg class="w-24 h-24 -rotate-90" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4.5"></path>
+<!-- Segment 1: Engineering 51% -->
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="51, 100" stroke-width="4.5"></path>
+<!-- Segment 2: Operations 18% -->
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="18, 100" stroke-dashoffset="-51" stroke-width="4.5"></path>
+<!-- Segment 3: Sales 16% -->
+<path class="text-status-warning" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="16, 100" stroke-dashoffset="-69" stroke-width="4.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-none">4</span>
+<span class="font-label-sm text-label-sm text-outline">Depts</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-space-md gap-y-1.5 flex-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-on-surface">Eng (51%)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface">Ops (18%)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-status-warning"></span>
+<span class="text-on-surface">Sales (16%)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-surface-container-high"></span>
+<span class="text-on-surface">Prod (15%)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pending Leave Approvals Table -->
+<div class="bg-card-bg rounded-xl shadow-sm mb-space-xl overflow-hidden">
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-card-bg">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Pending Leave Approvals</h2>
+<span class="px-2 py-0.5 rounded-full bg-status-danger/10 text-status-danger font-label-sm text-label-sm font-semibold">16 Pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Time-off requests awaiting management sign-off</p>
+</div>
+<!-- Pill Filter Tabs -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1.5 rounded-md bg-card-bg text-on-surface font-label-sm text-label-sm font-semibold shadow-xs" type="button">All (16)</button>
+<button class="px-3 py-1.5 rounded-md text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">Medical (5)</button>
+<button class="px-3 py-1.5 rounded-md text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">Annual (8)</button>
+<button class="px-3 py-1.5 rounded-md text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">Casual (3)</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-lg font-semibold">Employee</th>
+<th class="py-3 px-space-md font-semibold">Leave Type</th>
+<th class="py-3 px-space-md font-semibold">Requested Period</th>
+<th class="py-3 px-space-md font-semibold">Reason</th>
+<th class="py-3 px-space-md font-semibold">Status</th>
+<th class="py-3 px-space-lg font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1: Marcus Vance -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Corporate headshot of Marcus Vance, senior software engineer with neat hair and modern spectacles in a bright tech office with soft daylight and teal accent tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk-dIQcN5aVLbsYTfIcpd1cZJyZM-FAgqzqfB2sxla14ys39MYIbwFaai-5ydQUfoMsrV0FbFi6o2k-0ySpQhcOJNN38IyMvBf4gPhBh7X6PFvBEdFEqNLbX5mQJP1Wb4XnCLdfO1ZEZeV0wd5eFnMTbfAQOjDrYKLUrMXkO6LibGTEEldwSk6eX63qJAgbHKK8A5WUqQ-RZbkrnz8vdnvpfgxl-pQOG0fshquO95694y82ZGj7muqBg"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Marcus Vance</span>
+<span class="font-label-sm text-label-sm text-outline">SPMS-0842 • Engineering</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-medium">
+                Annual Leave
+              </span>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm">
+<div class="font-medium text-on-surface">Oct 30 - Nov 04, 2024</div>
+<div class="text-outline">5 working days</div>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm max-w-xs truncate text-on-surface-variant">
+              Family relocation &amp; international travel
+            </td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-warning/10 text-status-warning font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span> Pending Review
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-status-success/15 hover:bg-status-success/25 text-status-success font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Approve
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-error-container/40 hover:bg-error-container/70 text-error font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Reject
+                </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Elena Rostova -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Professional studio portrait of Elena Rostova, product designer smiling calmly in high resolution with muted slate office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqwqcgKgYUfKZKwJI6-3O4Da-iLsErwc7H4ZhUeKZ5UFYOjw6wpWoU12jMXFavo4y7CMQp-KgjR384HdO1dBJwWq2eAgxdZNBQUzy8rPJ55vKLibfCKLXi4dRUUMhc_A7CJ_22wOB5ZN9dKUCf5Gx_QwYJUP1z25uQxSwFBKQnPH4lHu1umKQMTSUvIOSUbItK48WoUKGYpNo66E8H7-xo0ck6lG_IicdNSwQH8_KcDlusJ4GI-9l3Ng"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Elena Rostova</span>
+<span class="font-label-sm text-label-sm text-outline">SPMS-1014 • Product &amp; Design</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-error-container/30 text-error font-label-sm text-label-sm font-medium">
+                Sick Leave
+              </span>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm">
+<div class="font-medium text-on-surface">Oct 28 - Oct 30, 2024</div>
+<div class="text-outline">3 working days</div>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm max-w-xs truncate text-on-surface-variant">
+              Post-operative medical recovery
+            </td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-danger/10 text-status-danger font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-status-danger"></span> Urgent Review
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-status-success/15 hover:bg-status-success/25 text-status-success font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Approve
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-error-container/40 hover:bg-error-container/70 text-error font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Reject
+                </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: David Chen -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of David Chen, data analyst in crisp navy shirt with clean bokeh lighting in an executive tech workstation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBChUiuc1141VgJzZX2FsS_bzuIJZmFcqzw4iCANuw2sGuJH9M0Aaq5_KEqrqrMkQhIa1e5a0CqiK2_mQaAR14-PA1OlbQZMClcjcM-gFgDfU06Dt8Jt6dE18WafwHhJJK1JMvJYVHeQGQbvGxON7s5XAVndwqxopo8bcqz1KTfjiEmoa4G_A7h6YESm4A6o4fBuhm-QIlLzFiytXUdx63729j_0Ut4xXwpGGJgteCGyBDaTq0ag7tsGQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">David Chen</span>
+<span class="font-label-sm text-label-sm text-outline">SPMS-0591 • Operations</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-medium">
+                Casual Leave
+              </span>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm">
+<div class="font-medium text-on-surface">Nov 01, 2024</div>
+<div class="text-outline">1 working day</div>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm max-w-xs truncate text-on-surface-variant">
+              Personal domestic obligations
+            </td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-warning/10 text-status-warning font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span> Pending Review
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-status-success/15 hover:bg-status-success/25 text-status-success font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Approve
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-error-container/40 hover:bg-error-container/70 text-error font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Reject
+                </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Aisha Morales -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-lg">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Professional headshot of Aisha Morales, account executive wearing blazer in modern glass architecture office background with natural bright daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuZawtfoC52bUMl7a5KMloJOxYfZpZ293i4k4k_s_3nBwQ2agy0seRy4gtO_TrUHupfCNth0NzoXM45CqLztBDwVRuauKgknQxaiBS9dQVzNiZxWbaYH7uyG0hXUg9QK_seRRyIII3JyradjhPCd0jHEBBdCXLSAobVr6sek2sbPB8Ha2IIGeDSFpBt1sm5slXvaqKc4X_3mWmNDoRgpKtKmvIDAy8nByKj2jOs1ZsAV5eyoMJrtr3SQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Aisha Morales</span>
+<span class="font-label-sm text-label-sm text-outline">SPMS-0419 • Sales &amp; Growth</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-medium">
+                Annual Leave
+              </span>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm">
+<div class="font-medium text-on-surface">Nov 07 - Nov 12, 2024</div>
+<div class="text-outline">4 working days</div>
+</td>
+<td class="py-4 px-space-md font-body-sm text-body-sm max-w-xs truncate text-on-surface-variant">
+              Annual family reunion &amp; travel
+            </td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-warning/10 text-status-warning font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span> Pending Review
+              </span>
+</td>
+<td class="py-4 px-space-lg text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-status-success/15 hover:bg-status-success/25 text-status-success font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Approve
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-error-container/40 hover:bg-error-container/70 text-error font-label-sm text-label-sm font-semibold transition-colors" type="button">
+                  Reject
+                </button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Metadata -->
+<div class="py-3 px-space-lg bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-outline">Showing 4 of 16 pending requests</span>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+        View All 16 Requests
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Recent Activity & Quick Actions Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Personnel Activity Timeline (8 cols) -->
+<div class="lg:col-span-8 bg-card-bg rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Personnel Activity</h2>
+<p class="font-body-sm text-body-sm text-outline">System audit stream across all departments</p>
+</div>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+<div class="space-y-space-md">
+<!-- Event 1 -->
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-status-warning/15 flex items-center justify-center text-status-warning shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">event_note</span>
+</div>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold text-on-surface">Elena Rostova</span> submitted a leave application for 3 days.
+              </p>
+<span class="font-label-sm text-label-sm text-outline">Category: Sick Leave (Medical cert attached)</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">10 mins ago</span>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-body-md text-body-md text-on-surface">
+                Payroll processed successfully for <span class="font-semibold text-on-surface">October 2024</span>.
+              </p>
+<span class="font-label-sm text-label-sm text-outline">1,248 employee disbursements queued</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">2 hours ago</span>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">fitbit_push_ups</span>
+</div>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-body-md text-body-md text-on-surface">
+                New hire <span class="font-semibold text-on-surface">Liam O'Connor</span> onboarded to Dev Team.
+              </p>
+<span class="font-label-sm text-label-sm text-outline">ID: SPMS-1249 • Senior Systems Architect</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">4 hours ago</span>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+</div>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold text-on-surface">Q4 Annual Performance Cycle</span> initiated by HR Admin.
+              </p>
+<span class="font-label-sm text-label-sm text-outline">All team leads notified for 360-degree feedback reviews</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">Yesterday</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions Panel (4 cols) -->
+<div class="lg:col-span-4 bg-card-bg rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Quick Actions</h2>
+<span class="material-symbols-outlined text-outline text-[20px]">bolt</span>
+</div>
+<div class="space-y-2">
+<button class="w-full flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" onclick="openProvisionModal()" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-card-bg flex items-center justify-center text-primary group-hover:scale-105 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold">Add Employee</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-card-bg flex items-center justify-center text-secondary group-hover:scale-105 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[18px]">fingerprint</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold">Mark Attendance</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-card-bg flex items-center justify-center text-status-warning group-hover:scale-105 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[18px]">approval_delegation</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold">Review Leave Requests</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-card-bg flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold">Process Payroll</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-card-bg flex items-center justify-center text-on-surface-variant group-hover:scale-105 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[18px]">summarize</span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold">Generate Reports</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- System Support / Health Snippet -->
+<div class="mt-space-lg p-3 rounded-lg bg-surface-container/60 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">SOC2 Compliant Cloud</span>
+<span class="font-label-sm text-label-sm text-outline">Automated backup synced 14m ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Provision Employee Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-nav-bg/60 backdrop-blur-sm" id="addEmployeeModal">
+<div class="bg-card-bg rounded-xl shadow-xl w-full max-w-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-space-lg bg-card-bg flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Provision New Personnel</h3>
+<p class="font-body-sm text-body-sm text-outline">Assign department credentials and workforce profile</p>
+</div>
+<button class="p-2 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeProvisionModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg space-y-space-md max-h-[70vh] overflow-y-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">First Name</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="e.g. Rachel" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Last Name</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="e.g. Thorne" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Corporate Email</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="rachel.thorne@company.internal" type="email"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Department</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container">
+<option>Engineering &amp; Architecture</option>
+<option>Product &amp; UX Research</option>
+<option>Operations &amp; Security</option>
+<option>Sales &amp; Enterprise Growth</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Role Title</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="e.g. Lead SRE Engineer" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Employment Type</label>
+<div class="flex gap-space-md pt-1">
+<label class="inline-flex items-center gap-2 cursor-pointer font-body-sm text-body-sm">
+<input checked="" class="text-primary-container focus:ring-primary-container" name="empType" type="radio"/>
+              Full-time Regular
+            </label>
+<label class="inline-flex items-center gap-2 cursor-pointer font-body-sm text-body-sm">
+<input class="text-primary-container focus:ring-primary-container" name="empType" type="radio"/>
+              Contractor
+            </label>
+</div>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container-low/50 flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-card-bg text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-colors" onclick="closeProvisionModal()" type="button">
+          Cancel
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint font-label-lg text-label-lg transition-colors" onclick="closeProvisionModal()" type="button">
+          Confirm Provisioning
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openProvisionModal() {
+    const modal = document.getElementById('addEmployeeModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeProvisionModal() {
+    const modal = document.getElementById('addEmployeeModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+</script></main></div></body></html>

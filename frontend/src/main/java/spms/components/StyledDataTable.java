@@ -1,0 +1,3 @@
+package spms.components;
+import spms.theme.AppTheme;import javax.swing.*;import javax.swing.table.DefaultTableModel;import java.awt.*;
+public final class StyledDataTable extends JTable {public StyledDataTable(DefaultTableModel model){super(model);setRowHeight(37);setFont(AppTheme.BODY);setForeground(AppTheme.INK);setGridColor(AppTheme.BORDER);setSelectionBackground(new Color(222,243,242));setSelectionForeground(AppTheme.INK);setShowVerticalLines(false);setAutoCreateRowSorter(true);getTableHeader().setFont(AppTheme.BODY.deriveFont(Font.BOLD,11));getTableHeader().setBackground(new Color(246,249,251));getTableHeader().setForeground(AppTheme.MUTED);getTableHeader().setPreferredSize(new Dimension(0,38));}}
