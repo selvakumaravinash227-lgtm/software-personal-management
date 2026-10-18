@@ -60,7 +60,7 @@ Install JDK 17+, Maven 3.9+, Node.js 20+, and MySQL 8+. Open this project folder
 
 ## Demonstration accounts
 
-After importing sample data, use the fictional Admin and HR accounts `admin` / `Admin@123` and `hr` / `Hr@123`. In the existing database, employee credentials are generated as one-time temporary passwords: open **Administration → User accounts → Issue employee passwords** as Admin, download the CSV once, deliver it privately, and remove it after distribution. Each employee must change their password on first sign-in. Fresh databases also have an E001-linked demo `employee` account that is forced to change its sample password.
+The SQL seed creates bootstrap Admin and HR accounts, and marks them as requiring a password change on first sign-in. The migration also marks already-seeded `admin` and `hr` accounts for a password change. Their bootstrap passwords have been disclosed in an earlier project version and must not be used for a publicly accessible deployment; change both passwords before publishing the API. Do not add passwords to this README, source control, or frontend configuration. In an existing database, run the migration, then sign in privately and choose new passwords before making the API public. Employee credentials are issued as one-time temporary passwords: open **Administration → User accounts → Issue employee passwords** as Admin, download the CSV once, deliver it privately, and remove it after distribution. Each employee must change their password on first sign-in. Fresh databases also have an E001-linked demo `employee` account that is forced to change its sample password.
 
 Payroll payment records are internal audit confirmations only. SPMS has no bank integration and does not transfer funds.
 

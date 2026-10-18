@@ -13,6 +13,10 @@ SET @spms_sql = IF(@spms_user_force_added,
   'UPDATE users SET must_change_password = TRUE WHERE role = ''EMPLOYEE''', 'SELECT 1');
 PREPARE spms_stmt FROM @spms_sql; EXECUTE spms_stmt; DEALLOCATE PREPARE spms_stmt;
 
+-- Demo administrator and HR accounts use published bootstrap credentials.
+-- Require a password change before those accounts can access the application.
+UPDATE users SET must_change_password = TRUE WHERE username IN ('admin', 'hr');
+
 -- Preserve the legacy overall rating/remarks while adding structured score fields.
 SET @spms_sql = IF((SELECT COUNT(*) = 0 FROM information_schema.columns WHERE table_schema=DATABASE() AND table_name='performance' AND column_name='technical_skills_score'), 'ALTER TABLE performance ADD COLUMN technical_skills_score DECIMAL(3,1) NULL', 'SELECT 1');
 PREPARE spms_stmt FROM @spms_sql; EXECUTE spms_stmt; DEALLOCATE PREPARE spms_stmt;

@@ -22,9 +22,9 @@ WHERE NOT EXISTS(SELECT 1 FROM employees e WHERE e.employee_id=seed.employee_id 
 
 -- Passwords are salted PBKDF2-HMAC-SHA256 hashes; plaintext is never stored.
 INSERT IGNORE INTO users(username,password_hash,role,employee_id,must_change_password)
-VALUES('admin','pbkdf2$a5At1d47w9+pIPj3AmTRGg==$oMF/qHKPWWK6Er09R/sqnAXUjk87rjMQU6CzppisoEY=','ADMIN',NULL,FALSE);
+VALUES('admin','pbkdf2$a5At1d47w9+pIPj3AmTRGg==$oMF/qHKPWWK6Er09R/sqnAXUjk87rjMQU6CzppisoEY=','ADMIN',NULL,TRUE);
 INSERT IGNORE INTO users(username,password_hash,role,employee_id,must_change_password)
-VALUES('hr','pbkdf2$XK+l2pxBZkcHhN2yvXtvVQ==$BVwB1NYTiqK8byasxAy+bx3/MTGNAdnD3BTyto/u034=','HR_MANAGER',NULL,FALSE);
+VALUES('hr','pbkdf2$XK+l2pxBZkcHhN2yvXtvVQ==$BVwB1NYTiqK8byasxAy+bx3/MTGNAdnD3BTyto/u034=','HR_MANAGER',NULL,TRUE);
 INSERT IGNORE INTO users(username,password_hash,role,employee_id,must_change_password)
 SELECT 'employee','pbkdf2$XS6r5panUdu+th+NkBP7XA==$JkQuHVHZP3WGqZYS9RZX6dwjHSaKhQr91RLXkCn8d1Y=', 'EMPLOYEE',
        COALESCE((SELECT employee_id FROM employees WHERE employee_id='SP001' LIMIT 1),(SELECT employee_id FROM employees WHERE email='aarav.mehta@example.com' LIMIT 1)),TRUE
